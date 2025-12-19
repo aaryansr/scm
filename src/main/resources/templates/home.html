@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body{
-        background-color: gray;
-      }
-      .container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-        background: red;
-      }
-    </style>
+    <link rel="stylesheet" th:href="@{'/css/output.css'}" />
+
   </head>
   <body>
-    <div class="container">
-      <h1 data-th-text=${name}>Home Page</h1>
+    <div class="bg-gray-800 p-4 w-1/2 text-red-500">
+      <h1 class="font-bold text-2xl text-red-500" th:text="${name}">Home Page</h1>
       <p>About : <span th:text="${title}"></span></p>
-      <p>GitHub Repo: <a data-th-href=${gitrepo} data-th-text=${gitrepo} href=""></a></p>
-      <p >
+      <p>
+        GitHub Repo:
+        <a th:href="${gitrepo}" th:text="${gitrepo}"></a>
+      </p>
+      <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur aut
         id quos dolore nulla quam dolorum eligendi dolor. Modi soluta ullam
         reiciendis in recusandae aspernatur doloremque fugiat? Vero nesciunt vel
         accusantium nihil culpa, consequatur earum ut fuga amet architecto
         voluptate aliquid perferendis sint ducimus laboriosam voluptatum
         officia, dolores laudantium.
-       
       </p>
     </div>
   </body>
